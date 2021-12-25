@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+		<meta name="description" content="Vocabulus is a web app to find new words given a relationship between two words.">
+		<link rel="canonical" href="{{ url_for('index') }}">
+
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+		<link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css"/>
+
+		<title>Vocabulus - Word finder</title>
+	</head>
+	<body>
+
+		{% block body %}{% endblock %}
+
+	</body>
+
+	<footer>
+		&#169; 2021 Muhammed Ali Dilek
+	</footer>
+</html>
