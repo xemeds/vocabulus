@@ -4,3 +4,27 @@
   box-sizing: border-box;
   font-family: 'Robot Mono', monospace;
 }
+
+body {
+  background: #242333;
+}
+
+.error {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 250px;
+}
+
+.error h1 {
+  font-size: 100px;
+}
+
+.error h2 {
+  font-size: 50px;
+}
+
+footer {
+  color: #ffffff;
+  text-align: center;
+  margin: 30vh 0 5vh 0;
+}

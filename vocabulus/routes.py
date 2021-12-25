@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for
 from vocabulus import app
+from vocabulus.words import words, closest_word
 # from vocabulus.forms import FORMS
 
 # Index route
