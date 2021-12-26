@@ -1,5 +1,22 @@
 {% extends "layout.html" %}
 
 {% block body %}
-<h1>Vocabulus</h1>
+<form method="POST" action="">
+	{{ form.hidden_tag() }}
+	{{ form.target_word(placeholder="Enter the target word here", autofocus=true) }}
+	{{ form.relation_word1(placeholder="Enter the first relation word here", autofocus=true) }}
+	{{ form.relation_word2(placeholder="Enter the second relation word here", autofocus=true) }}
+	{{ form.submit(class="button") }}
+	{% if form.errors %}
+		{% for error in form.target_word.errors %}
+			<h4>target_word: {{ error }}</h4>
+		{% endfor %}
+		{% for error in form.relation_word1.errors %}
+			<h4>relation_word1: {{ error }}</h4>
+		{% endfor %}
+		{% for error in form.relation_word2.errors %}
+			<h4>relation_word2: {{ error }}</h4>
+		{% endfor %}
+	{% endif %}
+</form>
 {% endblock %}
