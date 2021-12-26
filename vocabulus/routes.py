@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for
 from vocabulus import app
-from vocabulus.words import words, closest_word
+from vocabulus.words import words, get_word
 from vocabulus.forms import WordForm
 
 # Index route
@@ -11,8 +11,15 @@ def index():
 
 	# If the form was valid
 	if form.validate_on_submit():
-		# TODO
-		# Return the index page with the form
+		target_word = form.target_word.data
+		relation_word1 = form.relation_word1.data
+		relation_word2 = form.relation_word2.data
+
+		# Get the output word
+		output_word = get_word(relation_word1, relation_word2, target_word)
+		print(output_word)
+		
+		# Return the index page with the form and the output word
 		return render_template("index.html", form=form)
 
 	# Else if the form was invalid or not submitted
