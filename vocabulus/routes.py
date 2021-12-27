@@ -17,10 +17,9 @@ def index():
 
 		# Get the output word
 		output_word = get_word(relation_word1, relation_word2, target_word)
-		print(output_word)
 		
 		# Return the index page with the form and the output word
-		return render_template("index.html", form=form)
+		return render_template("index.html", form=form, output_word=output_word)
 
 	# Else if the form was invalid or not submitted
 	else:

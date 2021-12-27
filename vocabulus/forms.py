@@ -25,4 +25,4 @@ class WordForm(FlaskForm):
 
 	relation_word2 = StringField(validators=[DataRequired(), Length(min=1, max=100, message="Invalid word length"), validate_word])
 
-	submit = SubmitField("Find")
+	submit = SubmitField("=")
