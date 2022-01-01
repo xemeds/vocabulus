@@ -17,15 +17,17 @@
 		<input placeholder="queen" value="{{ output_word }}" readonly class="word-input">
 	</div>
 	{% if form.errors %}
-		{% for error in form.target_word.errors %}
-			<h4>target_word: {{ error }}</h4>
-		{% endfor %}
-		{% for error in form.relation_word1.errors %}
-			<h4>relation_word1: {{ error }}</h4>
-		{% endfor %}
-		{% for error in form.relation_word2.errors %}
-			<h4>relation_word2: {{ error }}</h4>
-		{% endfor %}
+		<div class="form-errors">
+			{% for error in form.relation_word1.errors %}
+				<h4>{{ form.relation_word1.data }}: {{ error }}</h4>
+			{% endfor %}
+			{% for error in form.relation_word2.errors %}
+				<h4>{{ form.relation_word2.data }}: {{ error }}</h4>
+			{% endfor %}
+			{% for error in form.target_word.errors %}
+				<h4>{{ form.target_word.data }}: {{ error }}</h4>
+			{% endfor %}
+		</div>
 	{% endif %}
 </form>
 {% endblock %}

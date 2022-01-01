@@ -82,6 +82,19 @@ body {
   background: #1d8499;
 }
 
+.form-errors {
+  background: #01b0d3;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.form-errors h4 {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
 .error {
   color: #ffffff;
   text-align: center;
