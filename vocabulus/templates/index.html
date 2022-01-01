@@ -5,29 +5,31 @@
 	<h1>Vocabulus</h1>
 	<h2>A web app to find new words given a relationship between two words</h2>
 </div>
-<form method="POST" action="" class="word-form">
-	<div class="word-inputs">
-		{{ form.hidden_tag() }}
-		{{ form.relation_word1(placeholder="king", autofocus=true, class="word-input") }}
-		<p>-</p>
-		{{ form.relation_word2(placeholder="man", autofocus=true, class="word-input") }}
-		<p>+</p>
-		{{ form.target_word(placeholder="woman", autofocus=true, class="word-input") }}
-		{{ form.submit(class="button") }}
-		<input placeholder="queen" value="{{ output_word }}" readonly class="word-input">
-	</div>
-	{% if form.errors %}
-		<div class="form-errors">
-			{% for error in form.relation_word1.errors %}
-				<h4>{{ form.relation_word1.data }}: {{ error }}</h4>
-			{% endfor %}
-			{% for error in form.relation_word2.errors %}
-				<h4>{{ form.relation_word2.data }}: {{ error }}</h4>
-			{% endfor %}
-			{% for error in form.target_word.errors %}
-				<h4>{{ form.target_word.data }}: {{ error }}</h4>
-			{% endfor %}
+<div class="word-form-wrapper">
+	<form method="POST" action="" class="word-form">
+		<div class="word-inputs">
+			{{ form.hidden_tag() }}
+			{{ form.relation_word1(placeholder="king", autofocus=true, class="word-input") }}
+			<p>-</p>
+			{{ form.relation_word2(placeholder="man", autofocus=true, class="word-input") }}
+			<p>+</p>
+			{{ form.target_word(placeholder="woman", autofocus=true, class="word-input") }}
+			{{ form.submit(class="button") }}
+			<input placeholder="queen" value="{{ output_word }}" readonly class="word-input">
 		</div>
-	{% endif %}
-</form>
+		{% if form.errors %}
+			<div class="form-errors">
+				{% for error in form.relation_word1.errors %}
+					<h4>{{ form.relation_word1.data }}: {{ error }}</h4>
+				{% endfor %}
+				{% for error in form.relation_word2.errors %}
+					<h4>{{ form.relation_word2.data }}: {{ error }}</h4>
+				{% endfor %}
+				{% for error in form.target_word.errors %}
+					<h4>{{ form.target_word.data }}: {{ error }}</h4>
+				{% endfor %}
+			</div>
+		{% endif %}
+	</form>
+</div>
 {% endblock %}

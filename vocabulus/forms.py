@@ -16,7 +16,7 @@ def validate_word(form, field):
 	try:
 		words[field.data]
 	except KeyError:
-		raise ValidationError("Word does not exists in the system")
+		raise ValidationError("Word does not exist in the system")
 
 class WordForm(FlaskForm):
 	target_word = StringField(validators=[DataRequired(), Length(min=1, max=100, message="Invalid word length"), validate_word])

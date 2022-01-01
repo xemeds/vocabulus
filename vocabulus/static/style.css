@@ -25,14 +25,18 @@ body {
   margin-bottom: 2vh;
 }
 
+.word-form-wrapper {
+  margin: 0 20px 0 20px;
+}
+
 .word-form {
-  max-width: 60%;
-  text-align: center;
+  max-width: 1100px;
   margin: 10vh auto 0vh auto;
 }
 
 .word-inputs {
   display: flex;
+  text-align: center;
 }
 
 .word-input {
@@ -61,7 +65,7 @@ body {
 }
 
 .button {
-  width: 25%;
+  width: 30%;
   height: 100%;
   background: #01b0d3;
   border-radius: 5px;
@@ -113,4 +117,36 @@ footer {
   color: #ffffff;
   text-align: center;
   margin: 30vh 0 5vh 0;
+}
+
+@media all and (max-width: 800px) {
+  .title {
+    margin-top: 5vh;
+  }
+  .title h1 {
+    font-size: 60px;
+  }
+  .title h2 {
+    font-size: 15px;
+  }
+  .word-form {
+    margin-top: 20px;
+    max-width: 90%;
+  }
+  .word-inputs {
+    display: block;
+  }
+  .word-input {
+    margin-bottom: 0px;
+    max-width: 70%;
+  }
+  .word-inputs p {
+    padding: 5px;
+  }
+  .form-errors {
+    margin-top: 20px;
+  }
+  footer {
+    margin-top: 20vh;
+  }
 }
