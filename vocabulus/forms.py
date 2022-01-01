@@ -9,8 +9,8 @@ def validate_word(form, field):
 	if len(field.data) < 1 or len(field.data) > 100:
 		return
 
-	# Remove the spaces in the word
-	field.data = field.data.replace(" ", "")
+	# Remove the spaces in the word and make it lowercase
+	field.data = field.data.replace(" ", "").lower()
 
 	# Check if the word exists in the word list
 	try:
