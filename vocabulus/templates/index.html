@@ -9,11 +9,11 @@
 	<form method="POST" action="" class="word-form">
 		<div class="word-inputs">
 			{{ form.hidden_tag() }}
-			{{ form.relation_word1(placeholder="king", autofocus=true, class="word-input") }}
+			{{ form.relation_word1(placeholder="king", class="word-input") }}
 			<p>-</p>
-			{{ form.relation_word2(placeholder="man", autofocus=true, class="word-input") }}
+			{{ form.relation_word2(placeholder="man", class="word-input") }}
 			<p>+</p>
-			{{ form.target_word(placeholder="woman", autofocus=true, class="word-input") }}
+			{{ form.target_word(placeholder="woman", class="word-input") }}
 			{{ form.submit(class="button") }}
 			<input placeholder="queen" value="{{ output_word }}" readonly class="word-input">
 		</div>
