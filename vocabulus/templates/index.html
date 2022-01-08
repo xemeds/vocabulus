@@ -15,7 +15,10 @@
 			<p>+</p>
 			{{ form.target_word(placeholder="woman", class="word-input") }}
 			{{ form.submit(class="button") }}
-			<input placeholder="queen" value="{{ output_word }}" readonly class="word-input">
+			<input placeholder="queen" value="{{ output_word }}" readonly id="word" class="word-input">
+			{% if output_word %}
+				<button type="button" onclick="copyWord()" class="button">Copy</button>
+			{% endif %}
 		</div>
 		{% if form.errors %}
 			<div class="form-errors">
@@ -32,4 +35,13 @@
 		{% endif %}
 	</form>
 </div>
+{% endblock %}
+
+{% block script %}
+function copyWord() {
+	var word = document.getElementById("word");
+	word.select();
+	word.setSelectionRange(0, 99999)
+	document.execCommand("copy");
+}
 {% endblock %}
